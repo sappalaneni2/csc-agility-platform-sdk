@@ -3,7 +3,7 @@ package com.servicemesh.agility.api.service;
 import java.util.StringTokenizer;
 
 public class ExportOptions {
-	
+    
     private boolean _recursive = true;
     private boolean _lookupOnly = false;
     private boolean _exportDependencies = true;
@@ -11,7 +11,6 @@ public class ExportOptions {
 	private boolean _exportInstances = false;
     private boolean _attachmentRefOnly = false;
     private boolean _exportConnectionsLast = false;
-    private boolean _exportMultiEnvelope = false;
     private String _userMode = null;  // "create" or "lookup"
     
     
@@ -57,6 +56,9 @@ public class ExportOptions {
 		else if ("userMode".equals(fieldName)) {
 			setUserMode(fieldValue);
 		}
+		else {
+			
+		}		
 	}
 	
 	
@@ -134,13 +136,5 @@ public class ExportOptions {
 
 	public void setExportConnectionsLast(boolean exportConnectionsLast) {
 		_exportConnectionsLast = exportConnectionsLast;
-	}
-
-	public boolean isExportMultiEnvelope() {
-		return _exportMultiEnvelope;
-	}
-
-	public void setExportMultiEnvelope(boolean exportMultiEnvelope) {
-		_exportMultiEnvelope = exportMultiEnvelope;
 	}
 }

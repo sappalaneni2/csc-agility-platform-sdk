@@ -254,7 +254,7 @@
       <link href="../../core"/>
       <link href="../../scripting"/>
       <link offline="true"
-            href="http://docs.oracle.com/javase/8/docs/api"
+            href="http://docs.oracle.com/javase/7/docs/api"
             packagelistLoc="../../root"/>
     </javadoc>
     

@@ -33,7 +33,7 @@ import com.servicemesh.core.reactor.WorkHandler;
 
 /**
  * 
- * A promise to produce a result of type &lt;T&gt; at some point in the future.
+ * A promise to produce a result of type <T> at some point in the future.
  * Enables a functional approach to transforming/completing work as intermediate
  * results complete.
  * 
@@ -325,8 +325,7 @@ public abstract class Promise<T>
      }
 
      /**
-     * Wrap this promise with a promise that will handle exceptions throws.
-     * If there is a runtime exception during the recover function then the promise is marked as failed.
+     * Wrap this promise with a promise that will handle exceptions throws
      */
     public Promise<T> recover(final Function<Throwable, T> func)
     {
@@ -349,11 +348,7 @@ public abstract class Promise<T>
         this.onFailure(new Callback<Throwable>() {
             @Override
             public void invoke(final Throwable t) {
-            	try {
-            		promise.complete(func.invoke(t));
-            	} catch (Throwable th) {
-            		promise.failure(th);
-            	}
+                promise.complete(func.invoke(t));
             }
         });
 

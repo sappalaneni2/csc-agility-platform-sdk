@@ -63,7 +63,7 @@ public class AthenaModelTest {
          "ScriptVariable", "ScriptVariableList", "ServiceMeshList", "Workload", "WorkflowMeta", "WorkflowTask", "WorkflowTaskMeta", "WorkflowTransitionMeta", 
          "WorkflowTaskList", "Volume", "ValueProvider", "Taxonomy", "VolumeStorageSnapshot", "StorageSnapshot", "Storage", "VolumeStorage", "StoreCategory", 
          "StoreCatalog", "StoreEditionType", "StoreEdition", "StorePrice", "StoreProduct", "StorePublisher", "StoreReleaseType", "StoreRelease", 
-         "StoreResource", "StoreProductAdapter", "StoreProductAdapterItem", "StoreProductAdapterItemList", "StoreProductType", 
+         "StoreResource", "StoreReview", "StoreProductAdapter", "StoreProductAdapterItem", "StoreProductAdapterItemList", "StoreProductType", 
          "Snapshot", "LdapGroup", "LdapGroupList", "LaunchItem", "LaunchItemDeployment", "Image", "EULA", "DesignAlias", 
          "DesignDeployer", "DesignItem", "DesignContainer", "DesignConnection", "AuthGroup", "AuthGroupList", "AuthenticationType", "Authentication", 
          "AuthenticationList", "AssetType", "AssetTypeList", "MgmtScript", "MgmtScriptGroup", "MgmtScript", "Model", "Instance", "OnboardRequest", 
