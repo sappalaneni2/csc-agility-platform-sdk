@@ -453,8 +453,6 @@ REPRODUCTION OF WORKS NOT EXPRESSLY AUTHORIZED BY SERVICEMESH IS STRICTLY PROHIB
          <xsd:enumeration value="unreserveAddress" />
          <xsd:enumeration value="removeAddressIfAvailable" />
          <xsd:enumeration value="allocateAddress" />
-         <xsd:enumeration value="assignAddress" />
-         <xsd:enumeration value="removeAddress" />
          <xsd:enumeration value="releaseAddress" />
          <xsd:enumeration value="acquireAddressIfAvailable" />
       </xsd:restriction>
@@ -884,68 +882,6 @@ REPRODUCTION OF WORKS NOT EXPRESSLY AUTHORIZED BY SERVICEMESH IS STRICTLY PROHIB
                      <xsd:appinfo>
                         <annox:annotate target="field">
                            <a:ApiField comment="Unique Credential Identifier." />
-                        </annox:annotate>
-                     </xsd:appinfo>
-                  </xsd:annotation>
-               </xsd:element>
-            </xsd:sequence>
-         </xsd:extension>
-      </xsd:complexContent>
-   </xsd:complexType>
-   
-   <xsd:complexType name="IPAMValidationRequest">
-      <xsd:annotation>
-         <xsd:appinfo>
-            <annox:annotate target="class">
-               <jxml:XmlRootElement>
-                  <jxml:name>IPAMValidationRequest</jxml:name>
-               </jxml:XmlRootElement>
-               <a:ApiModel comment = "Request object used by the Agility API service for IPAM validation."
-                           description = "" 
-                           externalDocLink = ""
-                           introducedIn = "3.2" />
-            </annox:annotate>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:complexContent>
-         <xsd:extension base="agility:ApiRequest">
-            <xsd:sequence>
-               <xsd:element name="serviceProvider" type="agility:ServiceProvider" minOccurs="0" maxOccurs="1">
-                  <xsd:annotation>
-                     <xsd:appinfo>
-                        <annox:annotate target="field">
-                           <a:ApiField comment="Service Provider that is being validated." />
-                        </annox:annotate>
-                     </xsd:appinfo>
-                  </xsd:annotation>
-               </xsd:element>
-            </xsd:sequence>
-         </xsd:extension>
-      </xsd:complexContent>
-   </xsd:complexType>
-
-   <xsd:complexType name="IPAMValidationResponse">
-      <xsd:annotation>
-         <xsd:appinfo>
-            <annox:annotate target="class">
-               <jxml:XmlRootElement>
-                  <jxml:name>IPAMValidationResponse</jxml:name>
-               </jxml:XmlRootElement>
-               <a:ApiModel comment = "Response object used by the Agility API service for IPAM validation."
-                           description = "" 
-                           externalDocLink = ""
-                           introducedIn = "3.2" />
-            </annox:annotate>
-         </xsd:appinfo>
-      </xsd:annotation>
-      <xsd:complexContent>
-         <xsd:extension base="agility:ApiResponse">
-            <xsd:sequence>
-               <xsd:element name="errorMessage" type="xsd:string" minOccurs="0" maxOccurs="1">
-                  <xsd:annotation>
-                     <xsd:appinfo>
-                        <annox:annotate target="field">
-                           <a:ApiField comment="Error Message from Validation Request.  Empty value means success" />
                         </annox:annotate>
                      </xsd:appinfo>
                   </xsd:annotation>

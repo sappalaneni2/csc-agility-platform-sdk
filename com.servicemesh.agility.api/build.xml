@@ -124,27 +124,7 @@
       </exec> 
     <exec executable="/bin/sh">
        <arg value='-c'/>
-       <arg value="sed -f sed/sedscript5 -itmp ${src}/com/servicemesh/agility/api/Template.java"/>
-    </exec>
-    <exec executable="/bin/sh">
-       <arg value='-c'/>
-       <arg value="sed -f sed/template -itmp ${src}/com/servicemesh/agility/api/Template.java"/>
-    </exec>
-    <exec executable="/bin/sh">
-       <arg value='-c'/>
-       <arg value="sed -f sed/sedscript5 -itmp ${src}/com/servicemesh/agility/api/PolicyAssignment.java"/>
-    </exec>
-    <exec executable="/bin/sh">
-       <arg value='-c'/>
-       <arg value="sed -f sed/policyAssign -itmp ${src}/com/servicemesh/agility/api/PolicyAssignment.java"/>
-    </exec>
-    <exec executable="/bin/sh">
-       <arg value='-c'/>
        <arg value="sed -f sed/sedscript5 -itmp ${src}/com/servicemesh/agility/api/Asset.java"/>
-    </exec>
-    <exec executable="/bin/sh">
-       <arg value='-c'/>
-       <arg value="sed -f sed/assetlist2 -itmp ${src}/com/servicemesh/agility/api/Asset.java"/>
     </exec>
     <exec executable="/bin/sh">
        <arg value='-c'/>
@@ -320,7 +300,7 @@
       <doctitle><![CDATA[<h1>Agility Platform Scripting APIs</h1>]]></doctitle>
       <bottom><![CDATA[<i>Copyright &#169; 2013-Present Computer Sciences Corporation</i>]]></bottom>
       <link offline="true"
-            href="http://docs.oracle.com/javase/8/docs/api"
+            href="http://docs.oracle.com/javase/7/docs/api"
             packagelistLoc="../root"/>
     </javadoc>
     

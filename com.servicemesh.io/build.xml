@@ -200,7 +200,7 @@
        <bottom><![CDATA[<i>Copyright &#169; 2013-Present Computer Sciences Corporation</i>]]></bottom>
        <link href="../core"/>
        <link offline="true"
-             href="http://docs.oracle.com/javase/8/docs/api"
+             href="http://docs.oracle.com/javase/7/docs/api"
              packagelistLoc="../root"/>
      </javadoc>
      
