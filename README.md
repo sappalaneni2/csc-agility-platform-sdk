@@ -1,5 +1,5 @@
 # csc-agility-platform-sdk
-The projects contained in this repository are used for developing Cloud Adapters or Service Adapters for the Agility Platform&trade;. The projects are as follows.
+The projects contained in this repository are used for developing Cloud Adapters or Service Adapters for the CSC Agility Platform&trade;. The projects are as follows.
 * com.servicemesh.core - Foundation classes for every Agility Platform SDK.
 * com.servicemesh.io - Supports I/O via HTTP/HTTPS, Proxies, and Remote Shell.
 * com.servicemesh.agility.api - Agility Platform&trade; Scripting APIs
