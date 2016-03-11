@@ -28,7 +28,8 @@
 	</properties>
 	
 	<scm>
-		<developerConnection>scm:git|git@github.com:csc/csc-agility-platform-sdk.git</developerConnection>
+		<developerConnection>scm:git|git@github.com:sappalaneni2/csc-agility-platform-sdk.git</developerConnection>
+		<connection>scm:git|git@github.com:sappalaneni2/csc-agility-platform-sdk.git</connection>
 	</scm>
 	
 	<distributionManagement>

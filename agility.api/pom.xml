@@ -7,7 +7,6 @@
 
 	<artifactId>agility.api</artifactId>
 	<packaging>jar</packaging>
-	<version>3.1.0</version>
 	<name>agility.api</name>
 
 	<parent>
@@ -32,7 +31,7 @@
 		<dependency>
 			<groupId>com.servicemesh</groupId>
 			<artifactId>core</artifactId>
-			<version>1.0.0</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
 

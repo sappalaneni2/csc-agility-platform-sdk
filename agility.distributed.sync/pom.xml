@@ -8,7 +8,6 @@
 
 	<artifactId>agility.distributed.sync</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
 	<name>agility.distributed.sync</name>
 
 	<parent>
@@ -28,7 +27,7 @@
 		<dependency>
 			<groupId>com.servicemesh</groupId>
 			<artifactId>core</artifactId>
-			<version>1.0.0</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
 

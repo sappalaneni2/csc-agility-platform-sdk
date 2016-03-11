@@ -8,7 +8,6 @@
 
 	<artifactId>io</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
 
 	<name>io</name>
 
@@ -29,7 +28,7 @@
 		<dependency>
 			<groupId>com.servicemesh</groupId>
 			<artifactId>core</artifactId>
-			<version>1.0.0</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 
 		<!--Project local dependencies : START -->

@@ -8,7 +8,6 @@
 
 	<artifactId>agility.sdk.service</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
 	
 	<!-- This module name deviated from standard naming convention as a folder ".service" 
 	is considered as a Bundle in MAC. -->
@@ -35,12 +34,12 @@
 		<dependency>
 			<groupId>com.servicemesh</groupId>
 			<artifactId>io</artifactId>
-			<version>1.0.0</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.servicemesh</groupId>
 			<artifactId>agility.api</artifactId>
-			<version>3.1.0</version>
+			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
 
