@@ -141,6 +141,28 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>flase</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+                            <Bundle-Name>Agility - SDK - Service Adapter</Bundle-Name>
+                            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+                            <Bundle-Version>${project.version}</Bundle-Version>
+                            <Bundle-Vendor>ServiceMesh</Bundle-Vendor>
+                            <DynamicImport-Package>*</DynamicImport-Package>
+                            <Import-Package>
+                                com.servicemesh.agility.api;version="${project.version}",com.servicemesh.core.async;version="${project.version}",com.servicemesh.core.messaging;version="${project.version}",com.servicemesh.core.reactor;version="${project.version}",com.servicemesh.io.proxy,org.osgi.framework,org.osgi.util.tracker;version="1.5.1"   
+                            </Import-Package>
+                            <Bundle-ClassPath>.,cobertura.jar</Bundle-ClassPath>
+                            <Export-Package>
+                                com.servicemesh.agility.sdk.service.exception;version="${project.version}",com.servicemesh.agility.sdk.service.helper;version="${project.version}",com.servicemesh.agility.sdk.service.msgs;version="${project.version}",com.servicemesh.agility.sdk.service.spi;version="${project.version}",com.servicemesh.agility.sdk.service.operations;version="${project.version}",com.servicemesh.agility.sdk.service.util;version="${project.version}" 
+                            </Export-Package>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

@@ -111,6 +111,30 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<configuration>
+                    <archive>
+                        <manifest>
+                            <addClasspath>flase</addClasspath>
+                        </manifest>
+                        <manifestEntries>
+                            <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+                            <Bundle-Name>IO Services</Bundle-Name>
+                            <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
+                            <Bundle-Version>${project.version}</Bundle-Version>
+                            <Bundle-Vendor>ServiceMesh</Bundle-Vendor>
+                            <DynamicImport-Package>*</DynamicImport-Package>
+                            <Import-Package>
+                                com.servicemesh.core.async,com.servicemesh.core.reactor,javax.crypto,javax.crypto.interfaces,javax.crypto.spec,javax.naming,javax.naming.ldap,javax.naming.directory,javax.net.ssl,javax.security.auth.x500,javax.xml,javax.xml.bind,javax.xml.parsers,javax.xml.transform,javax.xml.transform.dom,javax.xml.transform.stream,org.apache.commons.codec.binary,org.apache.commons.logging,org.apache.log4j;version="[1.2.17,2.0.0)",org.ietf.jgss,org.slf4j,org.w3c.dom,org.xml.sax 
+                            </Import-Package>
+                            <Bundle-ClassPath>
+                            	.,guava-16.0.1.jar,httpasyncclient-4.1.jar,httpclient-4.4.1.jar,httpcore-4.4.1.jar,httpcore-nio-4.4.1.jar,jaxb-impl-2.2.5-2.jar,jaxb-xjc-2.2.5-2.jar, jaxb2-basics-0.6.4.jar,jaxb2-basics-annotate-0.6.4.jar,jaxb2-basics-ant-0.6.4.jar,jaxb2-basics-runtime-0.6.4.jar,jaxb2-basics-tools-0.6.4.jar,commons-lang-2.5.jar
+                            </Bundle-ClassPath>
+                            <Export-Package>
+                                com.servicemesh.io.http,com.servicemesh.io.proxy,com.servicemesh.io.util
+                            </Export-Package>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
 			</plugin>
 			<plugin>
 				<artifactId>maven-antrun-plugin</artifactId>
