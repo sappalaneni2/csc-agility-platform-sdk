@@ -11,7 +11,7 @@
 	<name>agility.distributed.sync</name>
 
 	<parent>
-		<groupId>com.servicemesh</groupId>
+		<groupId>com.servicemesh.beta</groupId>
 		<artifactId>agility.platform-sdk</artifactId>
 		<version>4.0.0-SNAPSHOT</version>
 	</parent>
@@ -25,7 +25,7 @@
 	</repositories>
 	<dependencies>
 		<dependency>
-			<groupId>com.servicemesh</groupId>
+			<groupId>com.servicemesh.beta</groupId>
 			<artifactId>core</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
