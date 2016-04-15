@@ -4,21 +4,20 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
 	<modelVersion>4.0.0</modelVersion>
-
-	<groupId>com.servicemesh.beta</groupId>
-	<artifactId>agility.platform-sdk</artifactId>
+	<groupId>com.servicemesh.agility.platform-sdk</groupId>
+	<artifactId>parent</artifactId>
 	<packaging>pom</packaging>
-	<version>4.0.0-SNAPSHOT</version>
+	<version>4.0.0</version>
 
-	<name>agility.platform-sdk</name>
+	<name>parent</name>
 	
 	<modules>
 		<module>core</module>
 		<module>io</module>
-		<module>agility.api</module>
-		<module>agility.distributed.sync</module>
-		<module>agility.sdk.cloud</module>
-		<module>agility.sdk-service</module>
+		<module>api</module>
+		<module>distributed-sync</module>
+		<module>cloud</module>
+		<module>service</module>
 	</modules>
 
 	<properties>

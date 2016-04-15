@@ -6,15 +6,18 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>agility.distributed.sync</artifactId>
+	<artifactId>cloud</artifactId>
 	<packaging>jar</packaging>
-	<name>agility.distributed.sync</name>
-
+	
 	<parent>
-		<groupId>com.servicemesh.beta</groupId>
-		<artifactId>agility.platform-sdk</artifactId>
-		<version>4.0.0-SNAPSHOT</version>
+		<groupId>com.servicemesh.agility.platform-sdk</groupId>
+		<artifactId>parent</artifactId>
+		<version>4.0.0</version>
 	</parent>
+	
+	<properties>
+		<xjc.generated.sources.dir>${project.build.directory}/generated-sources/xjc</xjc.generated.sources.dir>
+	</properties>
 
 	<repositories>
 		<!-- project Local repository for hosting unmanaged dependencies -->
@@ -22,11 +25,16 @@
 			<id>agility-platform-sdk.local</id>
 			<url>file://${project.basedir}/../local-maven-repo/</url>
 		</repository>
-	</repositories>
+	</repositories>	
 	<dependencies>
 		<dependency>
-			<groupId>com.servicemesh.beta</groupId>
-			<artifactId>core</artifactId>
+			<groupId>com.servicemesh.agility.platform-sdk</groupId>
+			<artifactId>io</artifactId>
+			<version>${project.parent.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.servicemesh.agility.platform-sdk</groupId>
+			<artifactId>api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 	</dependencies>
@@ -41,6 +49,9 @@
 				<includes>
 					<include>**/*</include>
 				</includes>
+				<excludes>
+					<exclude>**/schema/**</exclude>
+				</excludes>				
 			</resource>
 			<resource>
 				<directory>${project.basedir}/../</directory>
@@ -67,6 +78,41 @@
 						<goals>
 							<goal>run</goal>
 						</goals>
+					</execution>
+					<execution>
+						<id>adjustImports</id>
+						<phase>generate-sources</phase>
+						<configuration>
+						<target name="deleteCodeFromImportedSchemas">
+								<echo message="deleting imported xjc classes" />
+								<delete dir="${xjc.generated.sources.dir}/com/servicemesh/agility/api" />
+								<delete dir="${xjc.generated.sources.dir}/com/servicemesh/core" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<!-- JAXB Generated Classes -->
+			<plugin>
+				<groupId>org.jvnet.jaxb2.maven2</groupId>
+				<artifactId>maven-jaxb2-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>xjc-api</id>
+						<phase>validate</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<schemaDirectory>${project.basedir}/src/main/resources/schema/</schemaDirectory>
+							<schemaIncludes>
+								<includes>*.xsd</includes>
+							</schemaIncludes>
+							<generateDirectory>target/generated-sources/xjc</generateDirectory>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
@@ -98,45 +144,21 @@
                         </manifest>
                         <manifestEntries>
                             <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
-                            <Bundle-Name>Agility - Distributed Sync</Bundle-Name>
-                            <Bundle-Activator>com.servicemesh.agility.distributed.impl.Activator</Bundle-Activator>
+                            <Bundle-Name>Agility - SDK - Cloud Adapter</Bundle-Name>
                             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName>
                             <Bundle-Version>${project.version}</Bundle-Version>
                             <Bundle-Vendor>ServiceMesh</Bundle-Vendor>
                             <DynamicImport-Package>*</DynamicImport-Package>
                             <Import-Package>
-                                com.servicemesh.core.async;version="${project.version}",org.apache.log4j;version="[1.2.17,2.0.0)",org.apache.zookeeper,org.osgi.framework,org.osgi.util.tracker    
+                                com.servicemesh.agility.api;version="${project.version}",com.servicemesh.core.async;version="${project.version}",com.servicemesh.core.messaging;version="${project.version}",com.servicemesh.core.reactor;version="${project.version}",com.servicemesh.io.proxy,org.osgi.framework,org.osgi.util.tracker;version="1.5.1"  
                             </Import-Package>
-                            <Bundle-ClassPath>.,java-uuid-generator-3.0.0.jar</Bundle-ClassPath>
+                            <Bundle-ClassPath>.</Bundle-ClassPath>
                             <Export-Package>
-                                com.servicemesh.agility.distributed.node,com.servicemesh.agility.distributed.sync 
+                                com.servicemesh.agility.sdk.cloud.exception;version="${project.version}",com.servicemesh.agility.sdk.cloud.helper;version="${project.version}",com.servicemesh.agility.sdk.cloud.msgs;version="${project.version}",com.servicemesh.agility.sdk.cloud.spi;version="${project.version}",com.servicemesh.agility.sdk.cloud.util;version="${project.version}"
                             </Export-Package>
                         </manifestEntries>
                     </archive>
                 </configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-dependency-plugin</artifactId>
-				<version>2.10</version>
-				<executions>
-					<execution>
-						<id>copy</id>
-						<phase>prepare-package</phase>
-						<goals>
-							<goal>copy</goal>
-						</goals>
-						<configuration>
-							<outputDirectory>${project.build.directory}/classes</outputDirectory>
-							<artifactItems>
-								<artifactItem>
-									<groupId>com.fasterxml.uuid</groupId>
-									<artifactId>java-uuid-generator</artifactId>
-								</artifactItem>
-							</artifactItems>
-						</configuration>
-					</execution>
-				</executions>
 			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

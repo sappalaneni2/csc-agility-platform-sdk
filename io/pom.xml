@@ -5,16 +5,13 @@
 
 
 	<modelVersion>4.0.0</modelVersion>
-
 	<artifactId>io</artifactId>
 	<packaging>jar</packaging>
 
-	<name>io</name>
-
 	<parent>
-		<groupId>com.servicemesh.beta</groupId>
-		<artifactId>agility.platform-sdk</artifactId>
-		<version>4.0.0-SNAPSHOT</version>
+		<groupId>com.servicemesh.agility.platform-sdk</groupId>
+		<artifactId>parent</artifactId>
+		<version>4.0.0</version>
 	</parent>
 
 	<repositories>
@@ -26,7 +23,7 @@
 	</repositories>
 	<dependencies>
 		<dependency>
-			<groupId>com.servicemesh.beta</groupId>
+			<groupId>com.servicemesh.agility.platform-sdk</groupId>
 			<artifactId>core</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>

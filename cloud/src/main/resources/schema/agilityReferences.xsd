@@ -13,15 +13,15 @@ ALL SOFTWARE, INFORMATION AND ANY OTHER RELATED COMMUNICATIONS (COLLECTIVELY, "W
    xmlns:jxml="http://annox.dev.java.net/javax.xml.bind.annotation"
    xmlns:agility="http://servicemesh.com/agility/api">
    
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/infrastructure.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/cloud.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/instance.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/image.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/stack.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/model.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/template.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/storage.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/package.xsd" />
-   <xsd:include schemaLocation="../../../../../agility.api/src/main/resources/schema/vpc.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/infrastructure.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/cloud.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/instance.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/image.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/stack.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/model.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/template.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/storage.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/package.xsd" />
+   <xsd:include schemaLocation="../../../../../api/src/main/resources/schema/vpc.xsd" />
       
 </xsd:schema>
