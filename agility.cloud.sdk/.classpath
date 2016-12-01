@@ -6,6 +6,8 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry excluding="groovy-stubs/|xjc/" kind="src" path="target/generated-sources"/>
+	<classpathentry kind="src" path="target/generated-test-sources"/>
 	<classpathentry kind="src" path="src/test/groovy"/>
 	<classpathentry including="**/*.java" kind="src" output="target/classes" path="target/generated-sources/xjc">
 		<attributes>
